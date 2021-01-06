@@ -20,13 +20,13 @@ console.log("What operation would you like to perform?\n1) Add \n2) Subtract \n3
 let operation = readline.question();
 
 let output;
-if(operation === "1") {
+if (operation === "1") {
   output = Number(number1) + Number(number2);
-} else if(operation === "2") {
+} else if (operation === "2") {
   output = Number(number1) - Number(number2);
-} else if(operation === "3") {
+} else if (operation === "3") {
   output = Number(number1) * Number(number2);
-} else if(operation === "4") {
+} else if (operation === "4") {
   output = Number(number1) / Number(number2);
 } else {
   console.log("I'm sorry. That operation is not available!");
