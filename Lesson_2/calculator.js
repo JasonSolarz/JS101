@@ -5,6 +5,9 @@
 // Print the result to the terminal.
 
 const readline = require("readline-sync");
+const jsonFile = require("./calculator_messages.json");
+
+let calcAgain = "";
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -14,51 +17,77 @@ function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
 }
 
-console.log("**********************************");
-console.log("*     WELCOME TO CALCULATOR!     *");
-console.log("**********************************");
-
-prompt("What's the first number?");
-let number1 = readline.question();
-
-while (invalidNumber(number1)) {
-  prompt("Hmm... that doesn't look like a valid number.");
-  number1 = readline.question();
+prompt(jsonFile.promptLang);
+let language = readline.question();
+while (!["1", "2"].includes(language)) {
+  prompt(jsonFile.invalidLang);
+  language = readline.question();
 }
 
-prompt("What's the second number?");
-let number2 = readline.question();
-
-while (invalidNumber(number2)) {
-  prompt("Hmm... that doesn't look like a valid number.");
-  number2 = readline.question();
+if (language === "1") {
+  language = "english";
+} else if (language === "2") {
+  language = "chinese";
 }
 
-prompt("What operation would you like to perform?\n1) Add \n2) Subtract \n3) Multiply \n4) Divide");
-let operation = readline.question();
+prompt(jsonFile[language].welcome);
+let name = readline.question();
 
-while (!["1", "2", "3", "4"].includes(operation)) {
-  prompt("Must choose 1, 2, 3 or 4");
-  operation = readline.question();
-}
+do {
 
-let output;
+  prompt(jsonFile[language].prompt1);
+  let number1 = readline.question();
 
-switch (operation) {
-  case "1":
-    output = Number(number1) + Number(number2);
-    break;
-  case "2":
-    output = Number(number1) - Number(number2);
-    break;
-  case "3":
-    output = Number(number1) * Number(number2);
-    break;
-  case "4":
-    output = Number(number1) / Number(number2);
-    break;
-  default:
-    prompt("I'm sorry. That operation is not available!");
-}
+  while (invalidNumber(number1)) {
+    prompt(jsonFile[language].invalidNumber);
+    number1 = readline.question();
+  }
 
-console.log(`The result is: ${output}`);
+  prompt(jsonFile[language].prompt2);
+  let number2 = readline.question();
+
+  while (invalidNumber(number2)) {
+    prompt(jsonFile[language].invalidNumber);
+    number2 = readline.question();
+  }
+
+  prompt(jsonFile[language].chooseOperation);
+  let operation = readline.question();
+
+  while (!jsonFile[language].validOperations.includes(operation)) {
+    prompt(jsonFile[language].validOperationMsg);
+    operation = readline.question();
+  }
+
+  let output;
+
+  switch (operation) {
+    case "1":
+      output = Number(number1) + Number(number2);
+      break;
+    case "2":
+      output = Number(number1) - Number(number2);
+      break;
+    case "3":
+      output = Number(number1) * Number(number2);
+      break;
+    case "4":
+      output = Number(number1) / Number(number2);
+      break;
+    default:
+      prompt(jsonFile.invalidOperationMsg);
+  }
+
+  console.log(jsonFile[language].result + output);
+
+  prompt(jsonFile[language].playAgainMsg);
+  calcAgain = readline.question();
+
+  while (!jsonFile[language].validPlayAgain.includes(calcAgain)) {
+    prompt(jsonFile[language].invalidPlayAgainMsg);
+    calcAgain = readline.question();
+  }
+
+} while (calcAgain[0].toLowerCase() === "y");
+
+console.log(name + jsonFile[language].goodBye);

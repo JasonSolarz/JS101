@@ -1,0 +1,36 @@
+{
+  "promptLang" : "Select Your Language: \n1) English\n2) Chinese",
+  "invalidLang" : "Please choose a valid language: \n1) English\n2) Chinese",
+  "english" : {
+    "welcome" : "Welcome To Calculator! What is your name?",
+    "prompt1" : "What's the first number?",
+    "prompt2" : "What's the second number?",
+    "invalidNumber" : "Hmm... that doesn't look like a valid number.",
+    "chooseOperation" : "What operation would you like to perform?\n1) Add \n2) Subtract \n3) Multiply \n4) Divide",
+    "validOperations" : ["1", "2", "3", "4"],
+    "validOperationMsg" : "Must choose 1, 2, 3 or 4",
+    "invalidOperationMsg" : "I'm sorry. That operation is not available!",
+    "result" : "The result is: ",
+    "playAgainMsg" : "Would you like to make another calculator? (Y/N)",
+    "validPlayAgain" : ["y", "Y", "Yes", "yes", "No", "no", "n", "N"],
+    "invalidPlayAgainMsg" : "Must choose Y) Yes or N) No",
+    "goodBye" : ", thanks for stopping by.. Take care!"
+  },
+
+  "chinese" : {
+    "welcome" : "欢迎使用计算器！请问你贵姓大名？",
+    "prompt1" : "第一个数字是多",
+    "prompt2" : "第二个数字是多少？",
+    "invalidNumber" : "嗯...看起来好像无效",
+    "chooseOperation" : "您想执行什么操作？\n1）加\n2）减\n3）乘以\n4）除",
+    "validOperations" : ["1", "2", "3", "4"],
+    "validOperationMsg" : "必须选择1、2、3或4",
+    "invalidOperationMsg" : "对不起。该操作不可用！",
+    "result" : "结果是: ",
+    "playAgainMsg" : "您想再做一个计算器吗？(Y/N)",
+    "validPlayAgain" : ["y", "Y", "Yes", "yes", "No", "no", "n", "N"],
+    "invalidPlayAgainMsg" : "必须选择Y）是或N）否",
+    "goodBye" : ", 感谢您的光临。.保重！"
+  }
+
+}
