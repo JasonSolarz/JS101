@@ -64,4 +64,4 @@ do {
     answer = readline.question().toLowerCase();
   }
 
-}while(answer[0] === "y");
+} while (answer[0] === "y");
