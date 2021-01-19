@@ -8,5 +8,6 @@
   "validDuration" : "Please enter a valid duration...\n",
   "totalLoanAmount" : "\nYour Total Loan Amount: ",
   "monthlyPayment" : "Your Monthly Payment: ",
-  "answer" : "\nWould you like another calculation? (y/n): "
+  "answer" : "\nWould you like another calculation? (y/n): ",
+  "validAnswer" : "Please enter 'y' or 'n'."
 }

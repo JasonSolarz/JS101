@@ -28,7 +28,7 @@ function prompt(string) {
   console.log(string);
 }
 
-console.log(jsonFile.welcome);
+prompt(jsonFile.welcome);
 
 do {
   let loanAmount = Number(readline.question(jsonFile.loanAmount));
@@ -60,7 +60,7 @@ do {
   prompt(jsonFile.answer);
   answer = readline.question().toLowerCase();
   while (answer[0] !== "y" && answer[0] !== "n") {
-    console.log("Please enter 'y' or 'n'.");
+    prompt(jsonFile.validAnswer);
     answer = readline.question().toLowerCase();
   }
 
