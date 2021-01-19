@@ -1,0 +1,12 @@
+{
+  "welcome" : "Welcome to the Mortage Calculator\n",
+  "loanAmount" : "Enter your total loan amount: ",
+  "percentRate" : "Enter the Annual Percentage Rate(5 = 5%): ",
+  "loanDuration" : "Enter the duration of the loan in months: ",
+  "validLoanAmount" : "Please enter a valid loan amount..\n",
+  "validAPR" : "Please enter a valid APR..\n",
+  "validDuration" : "Please enter a valid duration...\n",
+  "totalLoanAmount" : "\nYour Total Loan Amount: ",
+  "monthlyPayment" : "Your Monthly Payment: ",
+  "answer" : "\nWould you like another calculation? (y/n): "
+}
