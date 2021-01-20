@@ -1,0 +1,6 @@
+{
+  "welcomeMessage" : "Welcome to Rock, Paper, Scissors!\n",
+  "invalidChoice" : "That is not a valid choice..",
+  "playAgain" : "Do you want to play again (y/n)?",
+  "invalidPlayAgain" : "Please enter 'y' or 'n'."
+}
