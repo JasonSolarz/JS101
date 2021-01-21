@@ -1,6 +1,11 @@
 {
-  "welcomeMessage" : "Welcome to Rock, Paper, Scissors!\n",
+  "welcomeMessage" : "Welcome to Rock, Paper, Scissors, Lizard, Spock!\n",
   "invalidChoice" : "That is not a valid choice..",
   "playAgain" : "Do you want to play again (y/n)?",
-  "invalidPlayAgain" : "Please enter 'y' or 'n'."
+  "invalidPlayAgain" : "Please enter 'y' or 'n'.",
+  "playerWinRound" : "You win the round!\n",
+  "compWinRound" : "Computer wins the round!\n",
+  "roundTie" : "It's a tie!\n",
+  "playerWinGame" : "Congratulations! You WON the game!",
+  "compWinGame" : "Good Try! Computer takes the win!"
 }
