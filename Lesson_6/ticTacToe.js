@@ -182,8 +182,25 @@ function findAtRiskSquare(line, board) {
   return null;
 }
 
+function playAgain() {
+  let play;
 
+  while (true) {
+    let answer = readline.question("Play again? (y or n): ").trim().toLowerCase();
 
+    if (answer === "y" || answer === "yes") {
+      play = true;
+      break;
+    } else if (answer === "n" || answer === "no") {
+      play = false;
+      break;
+    } else {
+      console.log("Invalid Answer.");
+    }
+  }
+
+  return play;
+}
 function main() {
 
   let score = initializeScore();
@@ -220,6 +237,7 @@ function main() {
 
     if (someoneWon(board)) {
       console.log(`${detectWinner(board)} won the round!`);
+      readline.question("Press any key to continue...");
       updateScore(score, detectWinner(board));
       printScore(score);
     } else {
@@ -227,24 +245,14 @@ function main() {
     }
 
     if (someoneWonMatch(score)) {
-      if (someoneWonMatch(score)) {
-        console.log(`${detectMatchWinner(score)} WON the match!`)
-        let answer = readline.question("Play again? (y or n): ").toLowerCase()[0];
-        if (answer !== "y") break;
+      console.log(`${detectMatchWinner(score)} WON the match!`);
+      if (!playAgain()) {
+        break;
       } else {
-        console.log('Thanks for playing Tic Tac Toe!');
+        score = initializeScore();
       }
-    }
-
-    if (!someoneWonMatch(score)) {
-      let answer = readline.question(`Are you ready for round ${getRound(score) + 1}? (y or n): `).toLocaleLowerCase()[0];
-      if (answer !== "y") break;
-    }
-    score = initializeScore();
+    } 
   }
-
-
-
 }
 
 main();
