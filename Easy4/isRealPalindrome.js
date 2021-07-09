@@ -14,10 +14,10 @@ Break it down:
 */
 
 function isRealPalindrom(string) {
-  let regEx = /[a-z0-9]/gi;
-
-  return string === string.split("").reverse().join("");
-
+  let regEx = /[a-zA-Z0-9]/gi;
+  let newString = string.toLowerCase().match(regEx).join("");
+  
+  return newString === newString.split("").reverse().join("");
 }
 
 console.log(isRealPalindrom("madam"));
